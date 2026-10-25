@@ -18,7 +18,9 @@ jobs:
         with:
           # On a Claude subscription: store the secret CLAUDE_CODE_OAUTH_TOKEN,
           # whose value comes from `claude setup-token`.
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          #claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          
           # On an API key instead: comment out the line above, uncomment the line
           # below, and store the secret ANTHROPIC_API_KEY from the Claude Console.
           # anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
