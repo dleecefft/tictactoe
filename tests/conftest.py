@@ -17,3 +17,11 @@ def board_from():
         return [EMPTY if cell == "." else cell for cell in cells]
 
     return build
+
+
+@pytest.fixture(autouse=True)
+def home(tmp_path, monkeypatch):
+    """Point the home folder at a temporary one, so no test writes a real game log."""
+    monkeypatch.setenv("HOME", str(tmp_path))
+    monkeypatch.setenv("USERPROFILE", str(tmp_path))
+    return tmp_path
